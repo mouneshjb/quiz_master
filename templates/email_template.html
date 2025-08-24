@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz score details for this Month</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <img src="../static/quiz_master.jpg" alt="Quiz Master">
+        </div>
+        <div class="row">
+            <h1 class="text-center mt-2">Quiz Score Details</h1>
+            <p class="fs-3">Hello {{data['name']}}</p>
+            <p class="fs-5">Please refer to the scores details for the quizzes you attempted this month</p>
+        </div>
+        <div class="row">
+            <table class="table table-striped mx-2">
+                <thead>
+                    <tr>
+                        <th scope="col">Sl No.</th>
+                        <th scope="col">Date of Attempt</th>
+                        <th scope="col">Time of Attempt</th>
+                        <th scope="col">Quiz ID</th>
+                        <th scope="col">Subject Name</th>
+                        <th scope="col">Chapter Name</th>
+                        <th scope="col">Score</th>
+                        <th scope="col">Rating</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% set total_score = 0 %}
+                    {% for t in data['score'] %}
+                    <tr>
+                        <th scope="row">{{loop.index}}</th>
+                        <td>{{t['date_of_attempt']}}</td>
+                        <td>{{t['time_of_attempt']}}</td>
+                        <td>{{t['quiz_id']}}</td>
+                        <td>{{t['subject_name']}}</td>
+                        <td>{{t['chapter_name']}}</td>
+                        <td>{{t['score']}}</td> 
+                        <td>{{t['rating']}}</td>  
+                    </tr>
+                    {% endfor %}
+                    {% set total_score = data['score'] | sum(attribute='score') %}
+                    {% set score_length = data['score'] | length %}
+                    <tr>
+                        <td colspan="6" class="text-end">Average score in the month</td>
+                        <td>{{ ((total_score / score_length) | round(1)) if score_length > 0 else 0 }}</td>
+                    </tr>
+                </tbody>  
+            </table>
+            <p class="fs-5">
+                Thank you for being active member on Quiz Master. 
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-10"></div>
+            <div class="col-2">
+                <img src="../static/quiz_master.jpg" alt="Company stamp" style="width: 150px;">
+            </div>
+        </div>
+        <div class="row">
+            <p class="text-center mt-2">
+                Quiz Master | &copy; Copyright 2025 | Created at IITM
+            </p>
+        </div>
+    </div>
+    
+</body>
+</html>

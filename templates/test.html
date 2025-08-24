@@ -1,0 +1,211 @@
+<!-- <div class="row border" style="background-color: lightblue;">
+    <div class="col" style="text-align: center;">
+        <h3>Quiz Master</h3>
+    </div>
+    <div class="col border">
+        <router-link to="/login" class="btn btn-primary">Login</router-link>
+        <router-link to="/register" class="btn btn-primary">Register</router-link>
+    </div>
+</div>
+
+
+Login Page -->
+<!-- <div>
+    <h2 class="text-center">Login Form</h2>
+    <div>
+        <label for="email">E-mail ID</label>
+        <input type="text" id="email" v-model="email"> id should be same as for. Here if it was BE, we would have given 'name' in place of 'v-model' -->
+        <!-- v-model acts the storage to store the values entered in the input -->
+    <!-- </div>
+    <div> -->
+        <!-- <label for="pass">Password</label>
+        <input type="password" id="pass" v-model="password">
+    </div>
+    <div>
+        <button class="btn btn-primary" @click="login"> Login </button>
+    </div>
+</div> --> 
+
+<!-- Registration -->
+<!-- <div class="input_form" style="margin: auto; margin-top: 10px; height: 520px;">
+    <div class="mb-3">
+        <label for="email" class="form-label">E-Mail ID</label>
+        <input type="email" class="form-control" v-model="email" id="email" placeholder="iitm@study.ac.in">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" v-model="password" id="password" placeholder="password">
+    </div>
+    <div class="mb-3">
+        <label for="name" class="form-label">Full name</label>
+        <input type="text" class="form-control" v-model="name" id="name" placeholder="Mounesh Badiger">
+    </div>
+    <div class="mb-3">
+        <label for="dob" class="form-label">Date of Birth (YYYY-MM-DD)</label>
+        <input type="text" class="form-control" v-model="dob" id="dob" placeholder="2000-01-01">
+    </div>
+    <div class="mb-3" style="text-align: center;">
+        <label for="qualification" class="form-label">Qualification</label>
+        <input type="text" class="form-control" v-model="qualification" id="qualification" placeholder="Bachelors">
+    </div>
+    <p style="color: red;">{{message}}</p>
+</div>
+
+<img src="static/quiz_master.jpg" style="text-align: center;" alt="Home"> --> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div>
+        <div v-if="filteredResults">
+            <div style="width:1200px; height:500px; overflow-y:auto;margin: auto;margin-bottom: 10px; border: 1px solid black;">
+               
+                <div>
+                    <h5>Here will be the question statement</h5>
+                </div>
+                <br><br>
+                
+                <div class="form-check">
+                    <input 
+                        class="form-check-input" 
+                        type="radio" 
+                        id="'option1"
+                        value="option" 
+                        v-model="selectedOption"
+                        name="quizOptions"
+                    />
+                    <label class="form-check-label" :for="'option' + index">
+                        {{ option }}
+                    </label>
+                </div>
+                
+                <p>Selected Answer: {{ selectedOption }}</p>
+
+                  <br>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                      Second default radio
+                    </label>
+                  </div>
+                  <br>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                      Second default radio
+                    </label>
+                  </div>
+                  <br>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                      Second default radio
+                    </label>
+                  </div>
+                  
+                  <div style="background-color: rgba(75, 192, 192, 0.6);">
+            </div>
+            
+            
+        </div>
+        
+    </div>
+
+</body>
+</html>
+
+
+
+
+<!-- <div class="modal" v-if="isVisible">
+    <div class="modal-content">
+      <span class="close" @click="closeModal">&times;</span>
+      <h2>Add Subject</h2>
+      <div class="row">
+        <div class="col" style="height: 700px;">
+            <div class="border mx-auto mt-5" style="height: 300px; width: 400px;">
+                <div>
+                    <h2 class="text-center">Login Form</h2>
+                  id should be same as for. Here if it was BE, we would have given 'name' in place of 'v-model' -->
+                    <!-- v-model acts the storage to store the values entered in the input -->
+        
+                    <!-- <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" v-model="name" id="name" placeholder="Biology">
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <input type="description" class="form-control" v-model="description" id="description" placeholder="Study of livings">
+                        </div>
+                    <div style="text-align: center;">
+                        <button class="btn btn-primary" @click="add_subject"> Add subject </button>
+                        <p style="color: red;">{{message}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+       <button @click="submitTask">Submit</button> -->
+    <!-- </div>
+  </div> --> 
+<!-- 
+  <div style="margin: auto; ">
+    <div style="width: 400px; height: 300px; display: inline;">
+        <h2 style="text-align: center;">Top Scores by Subject</h2>
+        <canvas id="barChart"></canvas>
+    </div>
+
+    <div style="width: 400px; height: 300px; display: inline;">
+        <h2 style="text-align: center;">User Attempts by Subject</h2>
+        <canvas id="pieChart"></canvas>
+    </div>
+</div>
+
+<div>
+        
+    <div style="width:1200px; height:500px; overflow-y:auto;margin: auto;margin-bottom: 10px; text-align: center; border: 1px solid black;">
+                    
+        <table cellspacing="0" cellpadding="1" border="1" width="1180" style="margin: auto;">
+            <tr style="color:white;background-color:grey;text-align: center;position: sticky;">
+                <th>Sl No.</th>
+                <th>Date of Quiz</th>
+                <th>Number of Questions</th>
+                <th>Quiz ID</th>
+                <th>Time Duration</th>
+                <th>Action</th>
+               
+                
+            </tr>
+            
+            <tr v-for="(quiz, index) in quizes_obj[subject_id]" :key="quiz.id">
+                <td>{{index+1}}</td>
+                <td>{{quiz.date_of_quiz}}</td>
+                <td>{{quiz.number_of_questions}}</td>
+                <td>{{quiz.id}}</td>
+                <td>{{quiz.time_duration}}</td>
+                <td>
+                    <div>
+                        <button @click="openReviewQuizForm(quiz)"  class="btn btn-warning">Review</button>
+                        
+                        <button @click="openQuiz(quiz)" class="btn btn-success">Start</button>
+                    </div>
+                </td>
+             
+            </tr>
+        
+        </table>  
+                    
+    </div>
+</div> -->
+    
+    
+
+

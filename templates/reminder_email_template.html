@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today is the last day for the below quizzes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <img src="../static/quiz_master.jpg" alt="Quiz Master">
+        </div>
+        <div class="row">
+            <h1 class="text-center mt-2">Quiz being expired today</h1>
+            <p class="fs-3">Hello {{data['name']}}</p>
+            <p class="fs-5">Please complete the below quizzes by today {{ data['today_date'] }} 11:59 PM as they will expire today.</p>
+        </div>
+        <div class="row">
+            <table class="table table-striped mx-2">
+                <thead>
+                    <tr>
+                        <th scope="col">Sl No.</th>
+                        <th scope="col">Subject Name</th>
+                        <th scope="col">Chapter Name</th>
+                        <th scope="col">Number of Questions</th>
+                        <th scope="col">Time Duration</th>
+                        <th scope="col">Description</th>
+                       
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for t in data['daily_quizzes'] %}
+                    <tr>
+                        <th scope="row">{{loop.index}}</th>
+                        <td>{{t['subject_name']}}</td>
+                        <td>{{t['chapter_name']}}</td>
+                        <td>{{t['number_of_questions']}}</td>
+                        <td>{{t['time_duration']}}</td>
+                        <td>{{t['description']}}</td>
+                        
+                       
+                    </tr>
+                    {% endfor %}
+                   
+                </tbody>  
+            </table>
+            <p class="fs-5">
+                Thank you for being active member on Quiz Master. 
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-10"></div>
+            <div class="col-2">
+                <img src="../static/quiz_master.jpg" alt="Company stamp" style="width: 150px;">
+            </div>
+        </div>
+        <div class="row">
+            <p class="text-center mt-2">
+                Quiz Master | &copy; Copyright 2025 | Created at IITM
+            </p>
+        </div>
+    </div>
+    
+</body>
+</html>

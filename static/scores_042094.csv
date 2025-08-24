@@ -1,0 +1,9 @@
+Sl No.,User ID,User Name,Quiz ID,Subject Name,Chapter Name,Time of attempt,Score,Rating
+1,2,user1,6,Chemistry,Periodic Elements,2025-03-21 13:39:58,1,7.0
+2,2,user1,7,Mathematics,Geometry,2025-03-21 14:15:21,1,6.0
+3,2,user1,2,Chemistry,Periodic Elements,2025-03-21 16:35:07,0,3.0
+4,2,user1,9,Biology,Cells,2025-03-21 18:08:02,2,8.0
+5,3,user2,9,Biology,Cells,2025-03-22 18:11:44,3,6.0
+6,3,user2,5,Chemistry,Bonds,2025-03-22 18:12:27,0,7.0
+7,2,user1,10,Civics,Public Adminstration,2025-03-24 11:26:02,2,8.0
+8,2,user1,9,Biology,Cells,2025-03-24 11:39:33,3,7.0
