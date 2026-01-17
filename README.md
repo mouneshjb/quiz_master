@@ -80,7 +80,7 @@ In another terminal window, run the Celery Beat scheduler:
 ```
 celery -A run.celery beat --loglevel=info
 ```
-### 11. Setup Mailhog in cmd (run in home//<user/>)
+### 11. Setup Mailhog in cmd (run in home/\<user\>)
 ```
 ~/go/bin/MailHog
 ```
