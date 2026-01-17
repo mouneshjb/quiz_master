@@ -84,7 +84,7 @@ celery -A run.celery beat --loglevel=info
 ```
 ~/go/bin/MailHog
 ```
-Access at mailhog at http://localhost:8025/. For more details, check this document: click here
+Access at mailhog at http://localhost:8025/. For more details, check this document: https://github.com/mouneshjb/assets/blob/main/quiz_master/Configuring-MailHog.pdf
 
 ✨ You are all set!
 
